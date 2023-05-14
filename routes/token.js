@@ -5,8 +5,8 @@ const User = require("../models/UserSchema");
 const { generateString } = require("../service/commonService");
 const nodemailer = require("nodemailer");
 
-const username = "mycoviddiary547@gmail.com";
-const password = "bpsbncsxdgcnfoxq";
+const username = "coronaapp458@gmail.com";
+const password = "dvbdahdumglmuyso";
 // const username = "artisttesttesting@gmail.com";
 // const password = "emuvezdvtcxlpzdt";
 
@@ -42,7 +42,7 @@ router.post("/forget", async (request, response) => {
           to: body.email,
           subject: "Sending Email using Node.js",
           text: "That was easy!",
-          html: `<p>Forgot password? Click the link to reset <b><a href='https://final-year-project-mg74-wariskhan1.vercel.app/token?token=${token}'>Click here</a></b></p>`,
+          html: `<p>Forgot password? Click the link to reset <b><a href='https://my-covid-diary-mg74.vercel.app/token?token=${token}'>Click here</a></b></p>`,
         };
         // html: `<p>Forgot password? Click the link to reset <b><a href='http://localhost:3000/token?token=${token}'>Click here</a></b></p>`,
 
@@ -57,6 +57,7 @@ router.post("/forget", async (request, response) => {
         });
       }
     } else {
+      console.log("body : ", body);
       response.send({ status: 9999, message: "Invalid call!" }).status(200);
     }
   } catch (error) {

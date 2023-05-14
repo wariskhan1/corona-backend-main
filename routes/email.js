@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const nodemailer = require("nodemailer");
+const username = "coronaapp458@gmail.com";
+const password = "dvbdahdumglmuyso";
 
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -12,15 +14,15 @@ var transporter = nodemailer.createTransport({
   },
   requireTLS: true,
   auth: {
-    user: "artisttesttesting@gmail.com",
-    pass: "emuvezdvtcxlpzdt",
+    user: username,
+    pass: password,
   },
 });
 
 router.post("/send-email", async (req, res) => {
   let body = req.body;
   var mailOptions = {
-    from: "artisttesttesting@gmail.com",
+    from: username,
     to: body.email,
     subject: "Sending Email using Node.js",
     text: "That was easy!",
